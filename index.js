@@ -1,6 +1,6 @@
 
 var extend = require('extend');
-
+var Slack= require('./src/Slack.js');
 var config = require('./config.json');
 
 var exchanges = {
@@ -21,3 +21,8 @@ setTimeout(function() {
 	process.exit(0);
 }, 4*60*60*1000);
 
+setInterval(function(){
+	console.log('I:deleting msgs...');
+var slack= new Slack(config.slack);
+  slack.deleteOldPosts(config.slack);
+}, config.slack.LOG_RECORDING_HOURS*60*60*1000);
