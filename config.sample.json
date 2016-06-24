@@ -1,7 +1,11 @@
 {
 	"slack": {
 		"endpoint": "__SLACK_WEBHOOK_URL__",
-		"channel": "#YOUR_FAVORITE_CHANNEL"
+		"channel": "#YOUR_FAVORITE_CHANNEL",
+        "channelId": "ID",
+        "SLACK_TOKEN": "token of the channel",
+        "LOG_RECORDING_HOURS": 1,
+        "auto_delete_enabled": true
 	},
 	"zaif": {
 		"slack": {
