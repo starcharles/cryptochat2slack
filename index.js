@@ -22,7 +22,9 @@ setTimeout(function() {
 }, 4*60*60*1000);
 
 setInterval(function(){
-	console.log('I:deleting msgs...');
-var slack= new Slack(config.slack);
-  slack.deleteOldPosts(config.slack);
+  if(config.slack.auto_delete_enabled){
+	  console.log('I:deleting msgs...');
+    var slack= new Slack(config.slack);
+    slack.deleteOldPosts(config.slack);
+  }
 }, config.slack.LOG_RECORDING_HOURS*60*60*1000);

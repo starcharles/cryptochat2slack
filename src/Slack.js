@@ -1,9 +1,9 @@
 var SlackNode = require('slack-node');
 
-var Slack = function (config) {
-  this.config = config;
-  this.slack = new SlackNode(this.config.SLACK_TOKEN);
-  this.slack.setWebhook(config.endpoint);
+var Slack = function(config) {
+    this.config = config;
+    this.slack = new SlackNode(this.config.SLACK_TOKEN);
+    this.slack.setWebhook(config.endpoint);
 };
 
 Slack.prototype.send = function (service, user, msg) {
